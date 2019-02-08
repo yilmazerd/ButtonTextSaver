@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css"> 
+  <link rel="stylesheet" href="../stylesheets/videostyle.css" type="text/css">
+  <style type="text/css">
+    .my-video-screen 
+    {
+      width: 96vw;
+      height: 54vw;
+    }
+
+    @media (min-aspect-ratio: 6/5) { /*width over height is larger than 6/5 than do this 960 x 540 movie size*/
+      .my-video-screen 
+    {
+      height: 73.45vh;
+      width: 130vh;
+    }
+
+    }
+
+
+
+  </style>
+
+  <script type="text/javascript">
+  	var movieindex = 0;
+
+  	var movieList = ['https://www.larissatech.com/test/sLarissaWarning1.mov','https://www.larissatech.com/test/sLarissaWarning2.mov','https://www.larissatech.com/test/sLarissaWarning3.mov','https://www.larissatech.com/test/sLarissaWarning4.mov','https://www.larissatech.com/test/sLarissaWarning5.mov','https://www.larissatech.com/test/sLarissaWarning6.mov','https://www.larissatech.com/test/sLarissaWarning7.mov']
+
+  	function nextMovie() {
+  		// increase index by 1 (if possible)
+  		if (movieindex<movieList.length-1) {movieindex++;};
+  		// load the movie
+  		loadMovie(movieList[movieindex]);
+  	}
+
+  	function loadMovie(mName) {
+  		document.getElementById('myvideo').src = mName;
+  		document.getElementById('myvideo').play();
+  		let _x = document.getElementById("top_buttons_ms");
+      _x.style.display = 'none';
+  	}
+
+  	function previousMovie() {
+  		if (movieindex>0) {movieindex--;};
+  		loadMovie(movieList[movieindex]);
+      let _x = document.getElementById("top_buttons_ms");
+      _x.style.display = 'none';
+  	}
+
+  	
+    
+    function myMovieEndHandler() {
+      let _x = document.getElementById("top_buttons_ms");
+      _x.style.display = 'block';
+    }
+
+    function TurnMovieScreenOn() {
+      document.getElementById('movie_menu_with_buttons').style.display = 'block';
+      document.getElementById('justTheButton').style.display = 'none';
+      document.getElementById('myvideo').addEventListener('ended',myMovieEndHandler,false);
+    }
+
+
+  </script>
+</head>
+
+<div id="justTheButton"> <button id="openMovieScreenMenu" onclick="TurnMovieScreenOn()">  GO TO MOVIE SCREEN </button></div>
+
+<div id="movie_menu_with_buttons" style="padding-left: 5px;padding-right: 0px;padding-top: 5px;display: none;" > <!--Div for video player and buttons -->
+        <div id="top_buttons_ms">
+          <button class='movie-buttons-left' id="nextMovieButton" onclick="nextMovie()" style="height: 35px;width: 130px;">NEXT</button>
+          <button class='movie-buttons-left' id="previousMovieButton" onclick="previousMovie()" style="height: 35px;width: 130px;">PREVIOUS</button> 
+        </div>          
+        <div>
+          <div class="row">
+            <div class="col">
+              <div class="embed-responsive  my-video-screen " style="margin-top: 0px">
+                <video id="myvideo" controls playsinline>
+                  <source src="https://www.larissatech.com/test/sLarissaWarning4.mov" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="col"> 
+              <!-- can put vertical menu on the right -->
+              <h1 id="visibleAtEnd">visible</h1>
+            </div>
+          </div>  
+      </div>
+</div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.5/umd/popper.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  
+</html>

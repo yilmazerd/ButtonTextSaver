@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="stylesheet" href="../public/stylesheets/bootstrap.min.css" type="text/css">   
+  <link rel="stylesheet" href="../public/stylesheets/VideoStyle.css" type="text/css">
+  <link rel="stylesheet" href="../public/stylesheets/QuizStyle.css" type="text/css">
+  <link rel="stylesheet" href="../public/stylesheets/ConsentStyle.css" type="text/css">
+  <link rel="stylesheet" href="../public/stylesheets/PVNavbarStyle.css" type="text/css">
+
+
+  <script type="text/javascript" src="../public/javascripts/PVglobal.js"></script>
+  <script type="text/javascript" src="../public/javascripts/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../public/javascripts/popper.min.js"></script>
+  <script type="text/javascript" src="../public/javascripts/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../public/javascripts/VideoTest.js"></script>
+  <script type="text/javascript" src="../public/javascripts/VideoObject.js"></script>
+  <script type="text/javascript" src="../public/javascripts/QuizObject.js"></script>
+  <script type="text/javascript" src="../public/javascripts/QuizSettings.js"></script>
+  <script type="text/javascript" src="../public/javascripts/CloseScreenObject.js"></script>
+
+  <script type="text/javascript" src="../public/javascripts/PVruntime.js"></script>
+</head>
+
+<body>
+
+
+<!--Close screen -->
+<h2 id="close_screen" style="display: none;padding-top:40vh;text-align: center;"> Thank You </h2>
+<!--/Close screen -->
+
+<!-- Starting Screen -->
+<div id = "my_starting_screen" class="py-4" style="display: inline">
+  <div class="py-4 start-top-space"></div> 
+    <div class="row">
+      <div class="col-md-1"></div>
+        <div class="col-md-10 col-centered" >
+          <h1 class="text-center start-fonts start-welcome">Welcome to discharge instruction software</h1>
+          <button class="start-button w-100" onclick="document.getElementById('my_starting_screen').style.display='none';startpv();" >START LEARNING</button>
+        </div>
+      <div class="col-md-1"></div>
+    </div>
+</div>
+<!-- Startinf Screen ends -->
+
+<!-- Navbar -->
+<div id="top_nav_bar" class="container-fluid PVNavbar_container">
+    <div class="row">
+      <div class="col-xs" style="width:69vw">
+        <div id='top_buttons_ms'  style="display: none">
+          <button class='movie-buttons-left PVNavbar_text PVNavbar_button' id="nextMovieButton" onclick="PV_NEXT()">
+              NEXT
+          </button>
+          <button class='movie-buttons-left PVNavbar_text PVNavbar_button' id="previousMovieButton" onclick="PV_PREVIOUS()">
+              PREVIOUS
+          </button> 
+        </div>  
+      </div>
+      <div class="col-xs" style="width:26vw">
+        <h1 class="PVNavbar_text" style='text-align:right'> Medinfo.TV </h1>
+      </div>
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
+<!-- /Navbar -->
+
+
+
+
+<!--Div for video player and buttons -->
+<div id="movie_menu_with_buttons" style="padding-left: 0px;padding-right: 0px;padding-top: 0px;display: none;" > 
+        <div>
+          <div class="row">
+            <div class="col">
+              <div class="embed-responsive  embed-responsive-16by9 " style="margin-top: 5px">
+                <video id="myvideo" controls playsinline>
+                  <source src="https://www.larissatech.com/test/sLarissaWarning4.mov" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>  
+      </div>
+</div> 
+<!-- End of div for video player and buttons -->
+
+<!--Div for quiz -->   
+<div id="quiz_main" style="padding-left: 5px;padding-right: 0px;padding-top: 5px;display: none;"> 
+  <!--Some audio files used in the quiz -->
+  <audio id="audioForClick"><source src="../public/media/buttonClickSound.mp3" type="audio/mpeg"></audio>
+  <audio id="audioForWrongAnswer"><source src="../public/media/wrongAnswer.mp3" type="audio/mpeg"></audio>  
+  <audio id="audioForThankYou"><source src="../public/media/ThankYou.wav" type="audio/mpeg"></audio>
+  
+  <div id="quiz-header">
+    <div id="quiz_questions_answers" style="height:240px;text-align: center;">
+    <p> <h2 id="quiz_question"> This is the quiz question </h2>  </p> 
+    <p> <button id="quiz_answer_1" data-href = "1" class="quiz-answer-option"> quiz answer 1 </button> </p>
+    <p> <button id="quiz_answer_2" data-href = "2" class="quiz-answer-option"> quiz answer 2 </button> </p>
+    <p> <button id="quiz_answer_3" data-href = "3" class="quiz-answer-option"> quiz answer 3 </button> </p>
+    <p> <button id="quiz_answer_4" data-href = "4" class="quiz-answer-option"> quiz answer 4 </button> </p>
+    <p> <button id="quiz_answer_5" data-href = "5" class="quiz-answer-option"> quiz answer 5 </button> </p>
+    <h6 id="question_id" style="text-align: center;align-items: center;align-content: center;">Question 1/8</h6>
+   <div id="below_quiz_area">
+        <h2 id="quiz_explanation"> This is the explanation for the quiz question </h2>
+    </div>
+  </div>
+</div> 
+<!-- End of div for quiz -->
+
+
+</body>
+</html>
