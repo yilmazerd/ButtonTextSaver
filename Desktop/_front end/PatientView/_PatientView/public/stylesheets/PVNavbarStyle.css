@@ -1,3 +1,11 @@
+
+
+@media screen and (max-width:1000px){
+  .PVNavbar_image {
+    height: 6vw;
+  }
+}  
+
 .PVNavbar_container {
   height: 7vw;
 }
@@ -56,10 +64,12 @@
 
 }
 
-@media screen and (max-width:450px){
+@media screen and (max-width:150px){
   .PVNavbar_text {
     display: none;
   }
-
 }  
+
+
+
 

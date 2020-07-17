@@ -9,23 +9,32 @@ body {
   background: #F0F0F0;
 }
 
-.my-video-screen 
+.my-video-screen2 
 {
-  width: 80vw;
+  width: 20vw;
 }
 
 @media (min-aspect-ratio: 6/5) { /*width over height is larger than 6/5 than do this 960 x 540 movie size*/
-  .my-video-screen 
+  .my-video-screen2 
 {
   height: 73.45vh;
-  width: 100vw;
   width: 80vw;
 }
 
 @media (max-aspect-ratio: 8/5) {
   .start-fonts {
-    font-size: 8vh;
+    font-size: 8vh;    
   }
 }
     
+.my-video-screen
+{
+  position:relative;
+  padding-bottom:56.25%;
+  padding-top:30px;
+  height:0;
+  overflow:hidden;
+}    
+
+
 

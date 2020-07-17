@@ -9,10 +9,10 @@
 
 
   <link rel="stylesheet" href="../public/stylesheets/bootstrap.min.css" type="text/css">   
-  <link rel="stylesheet" href="../public/stylesheets/VideoStyle.css" type="text/css">
   <link rel="stylesheet" href="../public/stylesheets/QuizStyle.css" type="text/css">
   <link rel="stylesheet" href="../public/stylesheets/ConsentStyle.css" type="text/css">
   <link rel="stylesheet" href="../public/stylesheets/PVNavbarStyle.css" type="text/css">
+  <link rel="stylesheet" href="../public/stylesheets/VideoStyle.css" type="text/css">
 
 
   <script type="text/javascript" src="../public/javascripts/PVconstants.js"></script>  
@@ -42,7 +42,7 @@
     <div class="py-4 start-top-space"></div>
     <div class="row">
       <div class="col-md-1"></div>
-      <div class="col-md-10 col-centered">
+      <div class="col-md-10 col-centered" style="padding-top:6.25%;">
         <h1 class="text-center start-fonts start-welcome">
          Welcome to Discharge Animations </h1><button class="w-100 start-button" onclick=
         "document.getElementById('my_starting_screen').style.display='none';startpv();"
@@ -55,8 +55,9 @@
 
 <!-- Navbar -->
   <div id="top_nav_bar" class="container-fluid PVNavbar_container">
+    <div style="width: 2vw"></div>
     <div class="row" style="height: 6vh;">
-      <div class="col-xs" style="width:69vw">
+      <div class="col-xs" style="width:69vw;padding-left: 2vw;padding-top: 1vw;">
         <div id='top_buttons_ms' style="display: none">
           <button class='movie-buttons-left' id="nextMovieButton" onclick=
           "PV_NEXT()">NEXT</button> <button class='movie-buttons-left' id=
@@ -65,7 +66,7 @@
       </div>
 
       <div class="col-xs" style="width:26vw">
-        <h1 class="PVNavbar_text" style='text-align:right'>Medinfo.TV</h1>
+        <h1 class="PVNavbar_text" style='text-align:right;'><img class="PVNavbar_image" src="../public/images/LarissaHealthLogo.png"></h1>
       </div>
     </div>
   </div>
@@ -78,14 +79,16 @@
 <div id="movie_menu_with_buttons" style="padding-left: 0px;padding-right: 0px;padding-top: 0px;display: none;" >
         <div>
           <div class="row">
-            <div class="col">
-              <div class="embed-responsive  embed-responsive-16by9 " style="margin-top: 5px">
+            <div style="width: 2vw"></div>
+            <div class="col" style="width: 100%">
+              <div class="embed-responsive  embed-responsive-16by9 my-video-screen " style="margin-top: 5px">
                 <video id="myvideo" controls playsinline>
                   <source src="https://www.larissatech.com/test/sLarissaWarning4.mov" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </div>
             </div>
+            <div style="width: 2vw"></div>
           </div>  
       </div>
 </div> 
